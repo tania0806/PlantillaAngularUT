@@ -5,8 +5,17 @@
   "compilerOptions": {
     "baseUrl": "./",
     "paths": {
-      "@app/*": ["src/app/*"],
-      "@global/*": ["src/app/global/*"]
+      "@Global/*": ["src/app/global/*"],
+      "@Guards": ["src/app/core/guards/GuardPages.ts"],
+      "@Constants*": ["src/app/global/constants.ts"],
+      "@Component/Table": ["src/app/shared/components/custom-table/custom-table.component.ts"],
+      "@Services": ["src/app/core/services"],
+      "@Component/Home": ["src/app/layout/components/home/home.component.ts"],
+      "@Models/Response": ["src/app/core/models/response/response-model.ts"],
+      "@Models/Auth": ["src/app/core/models/login"],
+      "@Models/Person": ["src/app/core/models/persons"],
+      "@Models/Profile": ["src/app/core/models/profiles"],
+      "@Models/Store": ["src/app/core/models/stores"],
     },
     "outDir": "./dist/out-tsc",
     "strict": true,

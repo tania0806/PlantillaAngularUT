@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { inject, Injectable } from '@angular/core';
 import {
   HttpRequest,
   HttpHandler,
@@ -9,18 +9,13 @@ import {
 } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { catchError, finalize, tap } from 'rxjs/operators';
-// import { LoadingService } from 'src/app/utils/services/loading.service';
 import { ToastrService } from 'ngx-toastr';
 import { Router } from '@angular/router';
 
 @Injectable()
 export class ErrorInterceptor implements HttpInterceptor {
-
-  constructor(
-    // private loadingService: LoadingService,
-    private toastr: ToastrService,
-    private router:Router
-  ) {}
+  private router = inject(Router);
+  private toastr = inject(ToastrService);
 
   intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
     if(localStorage.getItem('token')){

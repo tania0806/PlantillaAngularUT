@@ -2,6 +2,7 @@ import { Routes } from '@angular/router';
 import { LoginComponent } from './modules/login/login.component';
 import { HomeComponent } from './layout/components/home/home.component';
 import { NotFoundComponent } from './layout/components/not-found/not-found.component';
+import { AuthGuard } from '@Guards';
 
 export const routes: Routes = [
   {
@@ -11,23 +12,13 @@ export const routes: Routes = [
   {
     path: 'home',
     component: HomeComponent,
-    children: [
-      { path: '', loadChildren: () => import('./modules/dashboard/dashboard.module').then(m => m.DashboardModule) }
-    ]
+    // canActivate:[AuthGuard],
+    loadChildren: () => import('./modules/dashboard/dashboard.routes').then(m => m.routes),
   },
   {
-    path: 'modulo-uno',
-    component: HomeComponent,
-    children:[
-      { path: '',  loadChildren: () => import('./modules/module-uno/module-uno-routing.module').then(m => m.ModuleUnoRoutingModule)},
-    ]
-  },
-  {
-    path: 'modulo-dos',
-    component: HomeComponent,
-    children:[
-      { path: '',  loadChildren: () => import('./modules/module-dos/module-dos-routing.module').then(m => m.ModuleDosRoutingModule)},
-    ]
+    path: 'administracion',
+    // canActivate: [authGuardFn],
+    loadChildren: () => import('./modules/administracion/administracion.routes').then(m => m.routes),
   },
   {
     path: '',

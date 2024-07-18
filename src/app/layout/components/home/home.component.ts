@@ -5,8 +5,7 @@ import { HeaderComponent } from '../header/header.component';
   selector: 'app-home',
   standalone: true,
   imports: [HeaderComponent],
-  templateUrl: './home.component.html',
-  styleUrl: './home.component.css'
+  templateUrl: './home.component.html'
 })
 export class HomeComponent {
 
