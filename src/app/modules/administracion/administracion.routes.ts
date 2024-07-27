@@ -15,6 +15,16 @@ export const routes: Routes = [
                 path:'personas',
                 loadChildren: () => import('./pages/personas/personas.routes').then(m => m.routes),
                 title: 'App - Dashboard'
+            },
+            {
+                path: '',
+                redirectTo:'alumnos',
+                pathMatch:'full'
+            },
+            {
+                path:'alumnos',
+                loadChildren: () => import('./pages/alumnos/alumnos.routes').then(m => m.routes),
+                title: 'App - Dashboard'
             }
         ]
     },

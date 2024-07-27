@@ -19,7 +19,7 @@ export const routes: Routes = [
     path: 'administracion',
     // canActivate: [authGuardFn],
     loadChildren: () => import('./modules/administracion/administracion.routes').then(m => m.routes),
-  },
+  }, 
   {
     path: '',
     redirectTo: 'home',

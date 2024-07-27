@@ -16,3 +16,7 @@ export const profiles = {
 export const stores = {
   get: `${environment.urlBase}GetSucursales`
 };
+export const alumnos = {
+  get: `${environment.urlBase}GetAlumnos`,
+  insert: `${environment.urlBase}InsertAlumnos`,
+};
