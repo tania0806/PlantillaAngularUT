@@ -25,25 +25,35 @@ export class LoginComponent {
   private toastr = inject(ToastrService);
   
   form = this.fb.nonNullable.group({
-    usuario: ['', [Validators.required]],
-    password: ['', [Validators.required, Validators.minLength(6)]]
+    Correo: ['', [Validators.required]],
+    Contraseña: ['', [Validators.required, Validators.minLength(6)]]
+
+    
   });
+  
+  login() {
+    // Aquí se manejaría el inicio de sesión (ej: llamar a la API)
+    console.log('Iniciando sesión...');
+  }
+
+  goToRegister() {
+    this.router.navigate(['/Registro'])};
 
   onSubmit(): void {
     if (this.form.valid) {
-      const { usuario, password } = this.form.getRawValue();
+      const { Correo, Contraseña } = this.form.getRawValue();
       const request: LoginRequest = {
-        username: usuario,
-        userpassword: password
+        NombreUsuario: Correo,
+        Pwd: Contraseña
       };
       this.auth.auth(request)
         .subscribe({
           next: (res) => {
             const data = res.Response.data;
             localStorage.setItem('token', data.Token);
-            localStorage.setItem('IdPersona', data.Usuario.Id.toString());
-            localStorage.setItem('NombreUsario', data.Usuario.IdPerfil.toString());
-            localStorage.setItem('Pwd', data.Usuario.NombreUsuario);
+            localStorage.setItem('Correo', data.Correo.toString());
+            localStorage.setItem('Contraseña', data.Contraseña.toString);
+           
 
             if(!localStorage.getItem('mode')){
               localStorage.setItem('mode', 'light');

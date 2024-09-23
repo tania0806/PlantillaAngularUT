@@ -9,6 +9,11 @@ export const routes: Routes = [
     path: 'login',
     component: LoginComponent
   },
+
+  // {
+  //   path: 'Registro',
+  //   component: RegistroComponent
+  // },
   {
     path: 'home',
     component: HomeComponent,

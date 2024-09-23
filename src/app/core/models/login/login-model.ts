@@ -1,8 +1,8 @@
 import {ApiResponse} from '@Models/Response';
 
 export interface LoginRequest {
-    username: string;
-    userpassword: string;
+    NombreUsuario: string;
+    Pwd: string;
 }
 
 export type LoginResponse = ApiResponse<LoginResponseData>;
