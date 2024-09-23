@@ -25,8 +25,8 @@ export class LoginComponent {
   private toastr = inject(ToastrService);
   
   form = this.fb.nonNullable.group({
-    usuario: ['svillarreal', [Validators.required]],
-    password: ['qK+qIzXDdvK4nsEOOuEk1g==', [Validators.required, Validators.minLength(6)]]
+    usuario: ['', [Validators.required]],
+    password: ['', [Validators.required, Validators.minLength(6)]]
   });
 
   onSubmit(): void {
@@ -41,13 +41,10 @@ export class LoginComponent {
           next: (res) => {
             const data = res.Response.data;
             localStorage.setItem('token', data.Token);
-            localStorage.setItem('idUsuario', data.Usuario.Id.toString());
-            localStorage.setItem('idPerfil', data.Usuario.IdPerfil.toString());
-            localStorage.setItem('usuario', data.Usuario.NombreUsuario);
-            localStorage.setItem('nombrePersona', data.Usuario.NombrePersona);
-            localStorage.setItem('idSucursal', data.Usuario.IdSucursal.toString());
-            localStorage.setItem('sucursal', data.Usuario.NombreSucursal);
-            localStorage.setItem('pctDescuento', data.Usuario.PctDescuento.toString());
+            localStorage.setItem('IdPersona', data.Usuario.Id.toString());
+            localStorage.setItem('NombreUsario', data.Usuario.IdPerfil.toString());
+            localStorage.setItem('Pwd', data.Usuario.NombreUsuario);
+
             if(!localStorage.getItem('mode')){
               localStorage.setItem('mode', 'light');
             }

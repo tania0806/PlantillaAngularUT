@@ -2,10 +2,11 @@
     <div class="login-box">
       <div class="card card-outline">
         <div class="card-header text-center">
-          <a href="#" class="h1">Plantilla | Login</a>
+          <a href="#" class="h1">BIENVENIDO DE NUEVO
+          </a>
         </div>
         <div class="card-body">
-          <p class="login-box-msg">Sign in to start your session</p>
+          <p class="login-box-msg">Ingresa los datos para iniciar</p>
           <form [formGroup]="form" novalidate (ngSubmit)="onSubmit()">
             <div class="input-group mb-2">
               <input type="email" class="form-control" placeholder="Email" formControlName="usuario" placeholder="Usuario" value="correo@gmail.com">
@@ -35,6 +36,13 @@
               <div class="col-12">
                 <button type="submit" class="btn custom-btn btn-block">Iniciar Sesión</button>
               </div>
+            </div>
+            <div class="row mt-2">  
+              <div class="col-12">
+            <div class="card-footer" style="display: flex; justify-content: space-between; align-items: center;">
+              <button type="submit" class="btn custom-btn btn-block">Registrarse</button>
+            </div>
+          </div> 
             </div>
           </form>
         </div>

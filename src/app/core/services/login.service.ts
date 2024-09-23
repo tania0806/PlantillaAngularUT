@@ -2,7 +2,6 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
-
 import { auth } from 'src/app/global/endpoints';
 import { LoginRequest, LoginResponse } from 'src/app/core/models/login'
 
