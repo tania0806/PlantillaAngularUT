@@ -43,16 +43,16 @@ export class LoginComponent {
     if (this.form.valid) {
       const { Correo, Contraseña } = this.form.getRawValue();
       const request: LoginRequest = {
-        NombreUsuario: Correo,
-        Pwd: Contraseña
+        Correo: Correo,
+        Contraseña: Contraseña
       };
       this.auth.auth(request)
         .subscribe({
           next: (res) => {
             const data = res.Response.data;
             localStorage.setItem('token', data.Token);
-            localStorage.setItem('Correo', data.Correo.toString());
-            localStorage.setItem('Contraseña', data.Contraseña.toString);
+            localStorage.setItem('Correo', data.Usuario.Correo.toString());
+            localStorage.setItem('Contraseña', data.Usuario.Contraseña.toString());
            
 
             if(!localStorage.getItem('mode')){

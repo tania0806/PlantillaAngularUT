@@ -2,6 +2,8 @@ import {ApiResponse} from '@Models/Response';
 
 export interface LoginRequest {
     NombreUsuario: string;
+    Correo: string;
+    Contraseña: string;
     Pwd: string;
 }
 
@@ -26,4 +28,7 @@ export interface Usuario {
     NombreSucursal: string;
     IdPerfil: number;
     PctDescuento: number;
+    Correo: string;
+    Contraseña: string;
+    
 }
