@@ -16,3 +16,8 @@ export const profiles = {
 export const stores = {
   get: `${environment.urlBase}GetSucursales`
 };
+
+export const registro = {
+  get: `${environment.urlBase}GetUsuarios`,
+ insert: `${environment.urlBase}InsertRegistro`,
+};

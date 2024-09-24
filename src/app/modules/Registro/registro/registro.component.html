@@ -1,3 +1,4 @@
+<body class="hold-transition login-page imageFondo">
 <div class="register-form">
     <h2>Registrarse</h2>
     <form (submit)="register()">
@@ -16,4 +17,65 @@
     <p>¿Ya tienes una cuenta?</p>
     <button (click)="/Login">Volver al Login</button>
   </div>
-  
+  </body>
+
+
+  <!-- <body class="hold-transition login-page imageFondo">
+    <div class="login-box">
+      <div class="card card-outline">
+        <div class="card-header text-center">
+          <a class="h1"> CREA TU CUENTA
+          </a>
+          
+           <div class="input-group mb-4">
+            <p class="login-box-msg">Registrate</p>
+            
+            <div class="format-text"><p class="text-align">Correo </p></div>
+            <input type="email" class="form-control" placeholder="Email" formControlName="usuario" placeholder="Usuario" value="correo@gmail.com">
+            <div class="input-group-append">
+              <div class="input-group-text">
+                <span class="fas fa-envelope"></span>
+              </div>
+            </div>
+          </div>
+          <div class="form-text text-danger text-center" *ngIf="form.get('usuario')?.touched && form.get('usuario')?.invalid">
+            <span *ngIf="form.get('usuario')?.errors?.['required']">Usuario Requerido*</span>
+            <span *ngIf="form.get('usuario')?.errors?.['email']">Correo no válido*</span>
+          </div>
+          <div class="input-group mt-2 mb-2">
+            <div class="format-text"><p class="text-align">Contraseña</p></div>
+            <input type="password" class="form-control" formControlName="password" placeholder="Password" value="123456789">
+            <div class="input-group-append">
+              <div class="input-group-text">
+                <span class="fas fa-lock"></span>
+              </div>
+            </div>
+          </div>
+          <div class="form-text text-danger text-center" *ngIf="form.get('password')?.touched && form.get('password')?.invalid">
+            <span *ngIf="form.get('password')?.errors?.['required']">Contraseña Requerida*</span>
+            <span *ngIf="form.get('password')?.errors?.['minlength']">La contraseña debe tener al menos 8 caracteres*</span>
+          </div>
+          <div class="row mb-4">
+            <div class="col-12">
+              <button type="submit" class="btn custom-btn btn-block">Iniciar Sesión</button>
+            </div>
+          </div>
+          
+          <div class="row mb-3">
+            <div class="col-11">
+              <div >
+                <div class="login-box-msg"><p class="text-align">¿No tienes una cuenta?</p></div>
+              </div>
+             <div class="row mb-5">
+              <div class="col-12">
+                <button click="/registro" type="submit" class="btn custom-btn btn-block">Registrarse</button>
+              </div>
+             </div>
+             
+            </div>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+   </body> -->
