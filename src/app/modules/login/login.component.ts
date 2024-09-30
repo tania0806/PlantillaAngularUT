@@ -26,7 +26,8 @@ export class LoginComponent {
   
   form = this.fb.nonNullable.group({
     Correo: ['', [Validators.required]],
-    Contraseña: ['', [Validators.required, Validators.minLength(6)]]
+    Contraseña: ['', [Validators.required, Validators.minLength(6)]],
+    NombreUsuario: ['', [Validators.required]],
 
     
   });
@@ -41,8 +42,9 @@ export class LoginComponent {
 
   onSubmit(): void {
     if (this.form.valid) {
-      const { Correo, Contraseña } = this.form.getRawValue();
+      const { Correo, Contraseña, NombreUsuario } = this.form.getRawValue();
       const request: LoginRequest = {
+        NombreUsuario : NombreUsuario,
         Correo: Correo,
         Contraseña: Contraseña
       };

@@ -4,7 +4,6 @@ export interface LoginRequest {
     NombreUsuario: string;
     Correo: string;
     Contraseña: string;
-    Pwd: string;
 }
 
 export type LoginResponse = ApiResponse<LoginResponseData>;
