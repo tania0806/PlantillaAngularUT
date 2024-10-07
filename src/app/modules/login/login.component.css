@@ -1,4 +1,9 @@
 .imageFondo {
-    background-image: url(../../../assets/dist/image/bkdk.jpg);
+    background-image: url(../../../assets/dist/image/ff.jpg);
     background-size: cover;
+    background-position: center; /* Centrar la imagen */
+  height: 100vh; /* Altura completa de la ventana */
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
